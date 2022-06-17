@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HEAL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="health-normal.png" type="image/png">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/all.min.css" rel="stylesheet">
+  <script src="bootstrap.bundle.min.js"></script>
+  <style>
+    .text-red-bold {
+      color: #842029;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm text-center h1 pt-5 pb-4">
+        How much healthy you are?
+      </div>
+    </div>
+    <form>
+      <div class="row justify-content-center mb-3">
+        <div class="col-6 col-md-3 text-center">
+          <label for="yourWeight" class="form-label">Your weight<span class="fw-bolder text-danger">*</span>
+            (kg)</label>
+          <input type="number" min="30" max="1000" class="form-control" id="yourWeight" step="0.1"
+            placeholder="45.5 or 50.3 or ..." data-bs-toggle="tooltip" data-bs-placement="bottom"
+            title="This is required" onblur="hideTooltipInputWeight()">
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <label for="yourHigh" class="form-label">Your high<span class="fw-bolder text-danger">*</span> (cm)</label>
+          <input type="number" min="10" max="1000" class="form-control" id="yourHigh" placeholder="150 or 160 or ..."
+            data-bs-toggle="tooltip" data-bs-placement="bottom" title="This is required" onblur="hideTooltipInputHigh()">
+        </div>
+      </div>
+      <div class="row justify-content-center mb-3">
+        <div class="col-12 col-md-6 text-center">
+          <label for="hourSleep" class="form-label">Number of sleeping hours per day<span
+              class="fw-bolder text-danger">*</span></label>
+          <input type="number" min="0" max="100" class="form-control" id="hourSleep" placeholder="8 or 10 or ..."
+            data-bs-toggle="tooltip" data-bs-placement="bottom" title="This is required" onblur="hideTooltipInputSleep()">
+        </div>
+      </div>
+      <div class="row justify-content-center mb-3 g-0 g-md-3">
+        <div class="col-12 col-md-12 text-center">
+          <label for="hourSleep" class="form-label">Number steps walking per day </label>
+          <label for="hourSleep" class="form-label">or Time(minutes) walking per day<span
+              class="fw-bolder text-danger">*</span></label>
+        </div>
+        <div class="col-5 col-md-3  text-center">
+          <input type="number" min="0" max="100" class="form-control" id="numberStep" placeholder="Number step ..."
+            data-bs-toggle="tooltip" data-bs-placement="bottom" title="This is required" onblur="hideTooltipInputNumberStep()">
+        </div>
+        <div class="col-2 col-md-auto text-center p-0">or</div>
+        <div class="col-5 col-md-3 text-center">
+          <input type="number" min="0" max="100" class="form-control" id="timeWalking" placeholder="Time walking ...">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-success w-100 fs-5" onclick="clickCalculate()">Calculate</button>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+    </form>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+      style="display: none;">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center">
+            <h6 class="modal-title" id="exampleModalLabel">Result your health</h6>
+          </div>
+          <div class="modal-body text-center">
+            <div id="resultGood" style="display: none;">
+              <div class="text-success h1">
+                <span id="percentGood"></span>% - GOOD <i class="far fa-smile-beam"></i>!
+              </div>
+            </div>
+            <div id="resultNormal" style="display: none;">
+              <div class="text-warning h1">
+                <span id="percentNormal"></span>% - NORMAL <i class="far fa-smile"></i>!
+              </div>
+            </div>
+            <div id="resultBad" style="display: none;">
+              <div class="text-danger h1">
+                <span id="percentBad"></span>% - BAD <i class="far fa-frown"></i>!
+              </div>
+            </div>
+            <div id="resultTerrible" style="display: none;">
+              <div class="text-red-bold h1">
+                <span id="percentTerrible"></span>% - TERRIBLE <i class="far fa-dizzy"></i>!
+              </div>
+            </div>
+            <div class="pt-2">
+              <div id="advice" class="fw-bold" style="display: none;"><span>You should:</span></div>
+              <div id="gw" style="display: none;"><span>Gain weight.</span></div>
+              <div id="lw" style="display: none;"><span>Lose weight.</span></div>
+              <div id="sm" style="display: none;"><span>Sleep more.</span></div>
+              <div id="sl" style="display: none;"><span>Sleep less.</span></div>
+              <div id="wm" style="display: none;"><span>Walk more.</span> </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center mt-2 py-2">
+            <button type="button" class="btn btn-success w-50" data-bs-dismiss="modal">Calculate again!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center text-lg-start w-100">
+    <div class="text-center pt-5">
+      By Vivek, Akshat
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
