@@ -14,4 +14,5 @@ body{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    backdrop-filter: blur(5px);
     }
