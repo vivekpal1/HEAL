@@ -16,6 +16,10 @@ body{
     background-attachment: fixed;
     backdrop-filter: blur(5px);
     }
+banner  {
+  width: 100%;
+  height: auto;
+}
 
 footer{
     color: rgb(228, 248, 236);
