@@ -1,0 +1,30 @@
+.row{
+    
+    color: rgba(32, 78, 73, 0.938);
+    /* background-color:rgb(221, 255, 255); */
+}
+body{
+    background-image: url("../img/abc.jpg");
+    background-size: fixed;
+    background-repeat: no-repeat;
+    /* background-position-y: 0%; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter: blur(5px);
+    }
+banner  {
+   width: 100%;
+
+  max-width: 400px;
+
+  height: auto;
+  
+}
+
+footer{
+    color: rgb(228, 248, 236);
+}
